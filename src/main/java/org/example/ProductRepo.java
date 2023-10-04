@@ -27,7 +27,7 @@ public class ProductRepo {
         if (products.remove(findProduct(id))) {
             System.out.println("Product has been removed.");
         } else {
-            System.out.println("Product not found");
+            System.out.println("Product not found.");
         }
     }
 

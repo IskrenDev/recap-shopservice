@@ -15,8 +15,8 @@ public class Main {
         Product product1 = new Product("1","Hammer", "Instruments", 35.60);
         Product product2 = new Product("2","Phone holder", "Car accessories", 20.49);
 
-        Order order1 = new Order("001", 91.69);
-        Order order2 = new Order("002", 147.78);
+        Order order1 = new Order(products, "001", 71.20);
+        Order order2 = new Order(products, "002", 20.49);
 
         productRepo.addProduct(product1);
         productRepo.addProduct(product2);
@@ -34,8 +34,10 @@ public class Main {
         System.out.println(orderListRepo.findOrder("001"));
         //orderListRepo.removeOrder("001");
 
-        ShopService shopService = new ShopService("Hammer1", 3);
+        OrderMapRepo orderMapRepo = new OrderMapRepo(orders);
 
-        System.out.println(shopService.placeOrder(productRepo));
+        ShopService shopService = new ShopService(orders);
+
+        orderMapRepo.addOrder(order1);
     }
 }
