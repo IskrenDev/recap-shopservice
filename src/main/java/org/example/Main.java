@@ -32,6 +32,10 @@ public class Main {
         productRepo.removeProduct("3");
 
         System.out.println(orderListRepo.findOrder("001"));
-        orderListRepo.removeOrder("001");
+        //orderListRepo.removeOrder("001");
+
+        ShopService shopService = new ShopService("Hammer1", 3);
+
+        System.out.println(shopService.placeOrder(productRepo));
     }
 }

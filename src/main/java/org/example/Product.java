@@ -13,4 +13,7 @@ public record Product(
         String withID() {
             return productID;
         }
+        String withName() {
+            return productName;
+        }
 }
